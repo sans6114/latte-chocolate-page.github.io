@@ -11,14 +11,20 @@ interface Props {
 
 <astro-banner btnId={btnId}>
   <div
-    class="fixed bottom-0 start-1/2 z-50 mx-auto w-full -translate-x-1/2 transform p-6 sm:max-w-4xl"
+    class="fixed bottom-0 start-1/2 z-50  mx-auto w-full -translate-x-1/2 transform p-6 sm:max-w-4xl"
     role="region"
     aria-label="Informational Banner"
   >
-    <div
-      class="rounded-xl bg-neutral-800 bg-[url('/banner-pattern.svg')] bg-cover bg-center bg-no-repeat p-4 text-center shadow-sm dark:bg-neutral-200"
-    >
-      <div class="flex items-center justify-center">
+  <div
+  class="rounded-xl p-4 text-center shadow-sm "
+  style={{
+    background: 'rgb(108,109,178)',
+    backgroundImage: 'radial-gradient(circle, rgba(108,109,178,1) 40%, rgba(243,11,134,1) 90%)'
+  }}
+  >
+
+  <div class="flex items-center justify-center">
+
         <div class="ml-auto">
           {title &&
           <p
