@@ -106,28 +106,69 @@ import estucheAmor from "@images/estuche-amor.jpg";
     ]}
     statistics={[
       {
-        count: "100%",
+        count: "0",
         description:
-          "Autenticos",
+          "Criticas",
       },
       {
         count: "100%",
         description:
-          "Ricos",
+          "Autenticos y originales",
       },
       {
-        count: "100%",
+        count: "",
         description:
-          "Originales",
+          "",
       },
       {
-        count: "100%",
-        description: "Diseñados al detalle",
+        count: "Siempre",
+        description: "Originales",
       },
     ]}
   />
 
-  <TimeLine />
+  <TimeLine
+  title=`Un poco sobre nuestra`
+     dates={[
+      {
+        date: "10 de Julio 2015",
+        titleDate: "Creación de Latte",
+        description:
+          "Descripcion corta",
+        author:   "Carla Aguirre",
+        AvatarSrc: 
+      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80"
+      },
+      {
+        titleDate: "Creación de Latte papa",
+        description:
+          "Descripcion corta",
+        author:   "Carla Aguirre",
+        AvatarSrc: 
+      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80"
+      },
+      {
+        titleDate: "Creación de Latte",
+        description:
+          "Descripcion corta",
+        author:   "Carla Aguirre",
+        AvatarSrc: 
+      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80"
+      },
+      {
+        titleDate: "Creación de Latte",
+        description:
+          "Descripcion corta",
+        author:   "Carla Aguirre |",
+        AvatarSrc: 
+      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80"
+      },
+    ]}
+    primaryBtn="Conocer más"
+    primaryBtnUrl="/Nosotros"
+    secondaryBtn="Blog"
+    secondaryBtnUrl="/blog"
+  />
 
   <FAQ title="Preguntas<br />frecuentes" faqs={faqs} />
 

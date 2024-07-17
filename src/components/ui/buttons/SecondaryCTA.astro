@@ -1,15 +1,17 @@
 ---
+import Icon from "@components/ui/icons/Icon.astro";
 // Destructure the properties from Astro.props
-const { title, url } = Astro.props;
+const { title, url, noArrow } = Astro.props;
 
 // Define TypeScript interface for the properties
 interface Props {
   title?: string;
   url?: string;
+  noArrow?: boolean;
 }
 // Define CSS classes for the hyperlink button
 const baseClasses =
-  "inline-flex items-center justify-center gap-x-2 rounded-lg px-4 py-3 text-center text-sm font-medium text-neutral-600 shadow-sm outline-none ring-zinc-500 focus-visible:ring transition duration-300";
+  "inline-flex items-center justify-center gap-x-2 rounded-lg px-4 py-3 text-center text-sm font-bold text-neutral-600 shadow-sm outline-none ring-zinc-500 focus-visible:ring transition duration-300";
 const borderClasses = "border border-neutral-200";
 const bgColorClasses = "bg-neutral-300";
 const hoverClasses =
@@ -28,4 +30,6 @@ const darkClasses =
   href={url}
 >
   {title}
+
+  {noArrow ? null : <Icon name="arrowRight" />}
 </a>

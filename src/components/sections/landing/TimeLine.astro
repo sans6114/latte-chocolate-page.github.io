@@ -1,138 +1,118 @@
 ---
+import PrimaryCTA from "@components/ui/buttons/PrimaryCTA.astro";
+import SecondaryCTA from "@components/ui/buttons/SecondaryCTA.astro";
+import TimeLineItem from "./TimeLineItem.astro";
+//interfaz para mis datos
+interface DateItem {
+  date?: string;
+  titleDate: string;
+  description: string;
+  author: string;
+  AvatarSrc: string;
+}
 
+interface Props {
+  title: string;
+  primaryBtn: string;
+  primaryBtnUrl: string;
+  secondaryBtn: string;
+  secondaryBtnUrl: string;
+  dates: DateItem[];
+}
+
+const {
+  dates,
+  primaryBtn,
+  primaryBtnUrl,
+  secondaryBtn,
+  secondaryBtnUrl,
+  title,
+} = Astro.props;
 ---
 
 <!-- Timeline -->
+<section
+  class="mt-10 flex items-center gap-10 rounded-3xl bg-primary-500 bg-opacity-20 p-2 shadow-2xl"
+>
+  <div class="flex flex-col md:p-10 md:pb-0">
+    <div class="p-4">
+      <h2
+        class="text-3xl font-bold text-neutral-800 dark:text-neutral-200 sm:text-5xl"
+      >
+        {title}<span
+          class="underline-offset-3 mx-2 underline decoration-primary-500 decoration-4"
+          >Historia</span
+        >
+      </h2>
+    </div>
 
-<section>
-
+    <!-- Item component-->
+    <div class="flex w-full flex-col p-2">
+      {
+        dates.map((datos: DateItem) => (
+          <TimeLineItem
+            date={datos.date}
+            titleDate={datos.titleDate}
+            description={datos.description}
+            author={datos.author}
+            AvatarSrc={datos.AvatarSrc}
+          />
+        ))
+      }
+      <div class="my-4 flex justify-center gap-2 md:justify-start md:p-4">
+        <PrimaryCTA title={primaryBtn} url={primaryBtnUrl} noArrow={true} />
+        <SecondaryCTA title={secondaryBtn} url={secondaryBtnUrl} />
+      </div>
+    </div>
+  </div>
+  <div class="hidden h-full w-full md:flex md:justify-center">
+    
+<svg
+class="w-[700px]"
+version="1.1" viewBox="0 0 1250 1250"  xmlns="http://www.w3.org/2000/svg">
+<path transform="translate(453,68)" d="m0 0h72l274 2 72 1 20 4 12 5 12 7 13 11 9 10 5 8 8 21 5 22 2 18v181l-1 94-3 151-3 116-1 125-2 88-3 17-5 13-7 11-11 13-13 10-16 8-16 4h-104l2 5 1 8v29l-1 13 4 4v5l-3 3h-6l-1 5 59 4 52 5 44 6 36 7 23 6 21 8 9 6 5 6 1 6-3 5-8 7-16 7-19 6-31 7-37 6-52 6-51 4-65 3-51 1h-39l-51-1-47-2-57-4-40-4-49-7-35-7-24-7-17-7-9-7-3-4v-8l6-7 15-8 21-7 30-7 43-7 42-5 47-4 7-1 8-15 5-15 2-12v-14l-3-16-1-5h-40l-15-2h-16l-13-2-15-6-8-6-12-12-13-17-10-19-4-12-1-7v-84l4-313 1-54-7-1-15-6-15-10-12-11-10-10-11-15-8-16-8-20-6-5-10-5-10-7-2-4 2-9 5-4 12-1 4-12 4-4 9 1 5 4h17l5 5v9l-8 16-3 8 1 10 7 17 8 12 10 12 8 7 10 8 10 5 6 2 1 1 1-2 4-313 1-13 6-15 7-11 9-10 8-7 12-6zm105 937 3 4 1 5v32l-4 22-3 10v3h16l29-1h139l7-14 5-16 1-6v-27l-2-10-5-1-82-1z" fill="#C18046"/>
+<path transform="translate(600,1079)" d="m0 0h132l6 1-2 5-7 11-4 7v6l5 5 10 4 20 4h29l4-2 3-7v-8l-5-3-20-3-6-3-1-1v-7l3-7h14l46 3 52 5 44 6 36 7 23 6 21 8 9 6 5 6 1 6-3 5-8 7-16 7-19 6-31 7-37 6-52 6-51 4-65 3-51 1h-39l-51-1-47-2-57-4-40-4-49-7-35-7-24-7-17-7-9-7-3-4v-8l6-7 15-8 21-7 30-7 43-7 42-5 47-4h6l-2 5-10 13-2 4v6l4 5 13 6 18 4 17 2h10l4-5 3-5-1-5-7-6-6-2-13-2-3-2v-7l5-13z" fill="#DBDBCB"/>
+<path transform="translate(453,68)" d="m0 0h72l274 2 72 1 20 4 12 5 12 7 13 11 9 10 5 8 8 21 2 7v5l-5-5-11-16-9-10-7-6-11-5-12-3-14-1-344-6h-40l-19 3-12 4-13 7-10 9-7 10-6 16-2 10-1 19-2 127-10 579v42l4 18 6 16 9 17 7 9 14 9 16 8v2l-8 1-13-2-15-6-8-6-12-12-13-17-10-19-4-12-1-7v-84l4-313 1-54-7-1-15-6-15-10-12-11-10-10-11-15-8-16-8-20-6-5-10-5-10-7-2-4 2-9 5-4 12-1 4-12 4-4 9 1 5 4h17l5 5v9l-8 16-3 8 1 10 7 17 8 12 10 12 8 7 10 8 10 5 6 2 1 1 1-2 4-313 1-13 6-15 7-11 9-10 8-7 12-6z" fill="#8F511C"/>
+<path transform="translate(566,293)" d="m0 0 34 1 27 3 33 7 7 1h40l25-5 22-4 19-2h50l18 2 21 5 19 7 8 4v8l-4 6-9 5-1 43-3 18-5 13-7 11-9 9-14 8-16 5-14 2h-29l-19-4-14-6-14-10-9-9-10-15-6-14-5-19-2-11-4-6-4-3h-8l-6 5-3 7-3 17-5 15-7 14-10 13-7 7-15 10-16 6-15 3h-29l-18-3-14-5-12-7-10-10-8-14-4-13-2-13-1-44-10-6-3-5v-8l15-7 19-6 21-4z" fill="#343B42"/>
+<path transform="translate(661,663)" d="m0 0h20l26 1 11 2 9 2 10 7 8 9 4 8 1 17v56l-1 15-5 10-9 10-6 4-10 3-8 1h-29l-18-1-16-5-11-6-10-9-5-9-1-5-1-29v-31l1-15 3-12 6-10 8-6 13-5z" fill="#A45F35"/>
+<path transform="translate(825,663)" d="m0 0h20l26 1 11 2 7 1 11 7 7 7 6 12 1 21v38l-1 27-6 12-9 10-8 4-7 2-8 1h-30l-17-1-16-5-11-6-10-9-4-6-2-7-1-22v-42l2-18 5-12 6-7 12-6z" fill="#A45F35"/>
+<path transform="translate(664,840)" d="m0 0h42l24 3 14 9 6 7 5 10 1 22v36l-1 28-3 8-9 12-9 6-13 3-10 1h-16l-26-2-14-4-11-6-9-7-6-9-2-6-1-22v-43l2-18 5-12 8-8 11-5z" fill="#A35E34"/>
+<path transform="translate(826,840)" d="m0 0h43l23 3 12 7 7 7 5 8 2 7v77l-2 11-7 11-9 8-11 4-16 2h-15l-26-2-15-4-11-6-10-9-5-8-2-8v-72l3-13 6-10 7-6 13-5z" fill="#A35E34"/>
+<path transform="translate(502,663)" d="m0 0h20l26 1 11 2 9 2 9 6 5 4 7 11 2 7v75l-2 12-7 11-7 7-10 5-12 2h-30l-18-1-18-6-14-9-7-8-3-7-1-6v-71l4-16 4-6 9-8 10-4z" fill="#A45F35"/>
+<path transform="translate(825,483)" d="m0 0 39 1 20 3 11 7 5 4 7 11 2 5v83l-3 9-7 10-8 7-11 4-19 2-24-1-14-1-16-5-11-6-9-8-6-12-1-11v-62l3-15 5-10 8-7 12-5z" fill="#A45F35"/>
+<path transform="translate(506,840)" d="m0 0h43l23 3 12 7 8 8 5 10 1 4v79l-2 9-7 11-9 8-11 4-16 2h-15l-26-2-12-3-12-6-9-7-6-7-3-7-1-8v-67l3-14 5-10 7-6 8-4z" fill="#A35E34"/>
+<path transform="translate(494,491)" d="m0 0h41l24 3 11 6 9 9 6 12v84l-3 8-6 9-7 7-8 4-19 3h-18l-25-2-12-3-12-6-9-7-7-9-2-6-1-16v-55l2-13 4-10 7-8 8-5 12-4z" fill="#A35E34"/>
+<path transform="translate(654,491)" d="m0 0h41l24 3 11 6 9 9 6 12v84l-3 9-7 9-9 8-9 3-15 2h-18l-25-2-12-3-12-6-9-7-7-9-2-6-1-15v-55l2-14 4-10 7-8 10-6z" fill="#A35E34"/>
+<path transform="translate(645,175)" d="m0 0h24l24 1 10 2 7 1 12 7 8 9 4 8 1 4v78l-2 10-2 4 1 2-25 5h-40l-25-5-22-4-9-1-4-8-1-7v-69l4-16 4-6 9-8 13-5z" fill="#A35E34"/>
+<path transform="translate(570,307)" d="m0 0h29l19 2 19 5 11 6 6 5 6 10 1 4v18l-4 20-7 16-9 13-7 7-14 9-13 5-10 2h-31l-14-3-12-5-9-6-7-7-7-12-4-15-1-8v-34l4-11 7-8 9-6 13-4 12-2z" fill="#343B42"/>
+<path transform="translate(813,173)" d="m0 0h13l29 1 20 3 10 6 7 6 6 9 2 6v84l-4 10-7 9-4 4-14-6-20-6-17-3-11-1-47-1-4-8-1-16v-56l3-16 4-8 5-6 10-6 14-4z" fill="#A35E34"/>
+<path transform="translate(566,293)" d="m0 0 34 1 27 3 33 7 7 1h40l25-5 22-4 19-2h50l18 2 21 5 19 7 8 4v8l-4 6-9 5-1 43-3 18-5 13-7 11-9 9-14 8-16 5-14 2h-29l-19-4-14-6-14-10-9-9-10-15-6-14-5-19-2-11-4-6-4-3h-8l-6 5-3 7-3 17-5 15-7 14-10 13-7 7-15 10-16 6-15 3h-29l-18-3-14-5-12-7-10-10-8-14-4-13-2-13-1-44-10-6-3-5v-8l15-7 19-6 21-4zm4 14-20 2-15 4-10 5-8 8-4 9-1 4v34l3 17 5 12 7 9 9 8 13 6 11 3 6 1h31l16-4 14-7 10-8 8-9 8-14 5-14 3-16v-18l-4-10-5-6-11-7-10-4-20-4-12-1zm205 0-19 2-19 5-11 6-7 6-6 12v20l3 15 5 14 6 11 8 10 9 8 14 8 13 4 6 1h31l17-4 14-7 10-9 7-11 5-17 1-9v-32l-3-10-6-8-7-6-13-5-16-3-13-1z" fill="#051119"/>
+<path transform="translate(487,181)" d="m0 0h17l27 1 19 3 11 7 8 8 5 10 1 4v76l-1 3-34 3-25 5-20 7-8 4h-2l2 12-9-2-16-8-10-9-5-10-1-6v-71l4-16 6-8 7-6 14-5z" fill="#A35E34"/>
+<path transform="translate(307,331)" d="m0 0 9 1 5 4h17l5 5v9l-8 16-3 8 1 10 7 17 8 12 10 12 8 7 10 8 10 5 6 2 3 4v14l-1 6-7-1-15-6-15-10-12-11-10-10-11-15-8-16-8-20-6-5-10-5-10-7-2-4 2-9 5-4 12-1 4-12z" fill="#010202"/>
+<path transform="translate(750,1007)" d="m0 0h20l3 2 2 12v29l-1 13 4 4v5l-3 3h-6l-3 11-1 2v7l6 3 20 3 5 3 1 1v8l-4 8-4 2h-29l-20-4-12-5-4-5v-6l6-10 10-16 7-16 4-17v-27z" fill="#010202"/>
+<path transform="translate(536 1e3)" d="m0 0h22l4 4 1 5v32l-4 22-7 21-2 5v7l7 2 12 2 8 6 3 4-1 5-6 8-1 1h-10l-23-3-14-4-12-6-4-5v-6l7-11 9-12 8-15 5-15 2-12v-14l-3-16z" fill="#010202"/>
+<path transform="translate(627,355)" d="m0 0h9l6 4 5 10 1 4v8l-4 13-6 9-6 7-10 7-10 5-13 3h-11l-13-4-10-9-3-8 2-9 5-5 7-6 23-14 16-10z" fill="#2A2F34"/>
+<path transform="translate(835,355)" d="m0 0h8l5 3 5 6 2 6v15l-5 12-6 8-8 8-14 8-9 3-6 1h-11l-9-2-10-6-6-8-1-3v-7l4-7 10-8 24-15 15-9 8-4z" fill="#2A2F34"/>
+<path transform="translate(890,844)" d="m0 0 6 1 10 7 7 8 4 8 1 4v77l-2 11-7 11-9 8-11 4-16 2h-15l-8-1 3-2 25-2 10-3 9-6 6-8 4-11 1-5v-69l-2-14-4-10-8-7z" fill="#8F521E"/>
+<path transform="translate(562,667)" d="m0 0 6 1 9 6 5 4 7 11 2 7v75l-2 12-7 11-7 7-10 5-12 2h-30l-2-2 27-2 12-3 9-6 7-8 4-11 1-5v-69l-2-14-4-10-4-5-9-5z" fill="#8F521D"/>
+<path transform="translate(720,667)" d="m0 0 7 1 10 7 8 9 4 8 1 17v56l-1 15-5 10-9 10-6 4-10 3-8 1h-29l-2-2 27-2 12-3 9-6 6-7 4-9 2-10v-64l-2-16-4-11-8-7-6-3z" fill="#8F521D"/>
+<path transform="translate(570,844)" d="m0 0 6 1 10 7 8 9 4 11v79l-2 9-7 11-9 8-11 4-16 2h-15l-8-1 3-2 25-2 10-3 9-6 7-9 3-9 1-5 1-31v-21l-1-20-3-16-5-8-6-5z" fill="#8F511D"/>
+<path transform="translate(884,667)" d="m0 0h5l11 7 7 7 6 12 1 21v38l-1 27-6 12-9 10-8 4-7 2-8 1h-30l-1-2 27-2 12-3 9-6 6-7 4-10 2-10v-61l-2-18-4-10-6-7-8-4z" fill="#8F511D"/>
+<path transform="translate(727,844)" d="m0 0h5l12 8 6 7 5 10 1 22v36l-1 28-3 8-9 12-9 6-13 3-10 1h-16l-7-1 3-2 25-2 10-3 9-6 6-9 4-11 1-7v-61l-2-17-4-11-5-6-8-4z" fill="#8F511D"/>
+<path transform="translate(879,487)" d="m0 0 7 1 13 9 7 10 3 7v83l-3 9-7 10-8 7-11 4-19 2-18-1v-2l25-2 9-2 10-6 6-7 4-8 2-8 1-10v-50l-2-22-4-12-4-5-11-6z" fill="#8F511D"/>
+<path transform="translate(557,495)" d="m0 0 6 1 9 6 7 7 6 12v84l-3 8-6 9-7 7-8 4-19 3h-18l-8-1v-1l5-1 25-2 10-3 8-6 6-7 4-10 2-13v-54l-2-20-3-10-4-6-10-6z" fill="#8E511D"/>
+<path transform="translate(717,495)" d="m0 0 6 1 9 6 7 7 6 12v84l-3 9-7 9-9 8-9 3-15 2h-18l-8-1v-1l5-1 25-2 10-3 8-6 6-7 4-10 2-12v-56l-2-19-4-12-4-5-9-5z" fill="#8E511D"/>
+<path transform="translate(870,177)" d="m0 0 7 1 11 7 7 8 4 8 1 3v84l-4 10-7 9-4 4-7-4 6-8 4-8 3-16v-54l-2-20-3-10-6-8-10-5z" fill="#8E511C"/>
+<path transform="translate(706,179)" d="m0 0 6 1 11 7 7 8 4 8 1 4v78l-2 10-2 4 1 2-15 3 6-12 2-9v-71l-3-16-4-8-8-6z" fill="#8F511D"/>
+<path transform="translate(664,427)" d="m0 0h9l17 1 11-1h9l5 5v4l-7 2h7l-3 5-6 4-16 4-13-1-10-3-7-6-1-3h6l-6-2 1-6z" fill="#FCFCFB"/>
+<path transform="translate(545,185)" d="m0 0 7 1 10 7 7 7 5 10 1 4v76l-1 3-15 1v-1h6v-73l-2-14-4-10-5-5-9-5z" fill="#8F521D"/>
+<path transform="translate(530,323)" d="m0 0 4 2 1 1v14l-3 16-3 6-4 1-5-5-1-4v-11l3-11 4-6z" fill="#FBFBF9"/>
+<path transform="translate(736,322)" d="m0 0 4 1 1 1v17l-3 15-3 5h-5l-4-5-1-5v-8l3-12 4-6z" fill="#FBFBFA"/>
+<path transform="translate(664,427)" d="m0 0h9l17 1 11-1h9l5 5v4l-5 1 2-4-1-1-30-1h-19l1 6-4-1 1-6z" fill="#DBDBCB"/>
+<path transform="translate(524,373)" d="m0 0h5l3 4 1 7-2 4-5 1-4-4-1-7z" fill="#F9F9F6"/>
+<path transform="translate(730,372)" d="m0 0h5l3 3 1 8-2 4-4 1-5-5v-8z" fill="#FAFAF8"/>
+<path transform="translate(772,1061)" d="m0 0 5 4 1 7-3 3h-6l-3-3 1-7 5-2z" fill="#A36137"/>
+<path transform="translate(659,438)" d="m0 0 6 1 3 5 9 4v1l-8-1-6-4-4-5z" fill="#DBDBCB"/>
+</svg>
+  </div>
 </section>
-
-<div>
-    <!-- Heading -->
-    <div class="ps-2 my-2 first:mt-0">
-      <h3 class="text-xs font-medium uppercase text-gray-500 dark:text-neutral-400">
-        1 Aug, 2023
-      </h3>
-    </div>
-    <!-- End Heading -->
-  
-    <!-- Item -->
-    <div class="flex gap-x-3">
-      <!-- Icon -->
-      <div class="relative last:after:hidden after:absolute after:top-7 after:bottom-0 after:start-3.5 after:w-px after:-translate-x-[0.5px] after:bg-gray-200 dark:after:bg-neutral-700">
-        <div class="relative z-10 size-7 flex justify-center items-center">
-          <div class="size-2 rounded-full bg-gray-400 dark:bg-neutral-600"></div>
-        </div>
-      </div>
-      <!-- End Icon -->
-  
-      <!-- Right Content -->
-      <div class="grow pt-0.5 pb-8">
-        <h3 class="flex gap-x-1.5 font-semibold text-gray-800 dark:text-white">
-          <svg class="flex-shrink-0 size-4 mt-1" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path>
-            <polyline points="14 2 14 8 20 8"></polyline>
-            <line x1="16" x2="8" y1="13" y2="13"></line>
-            <line x1="16" x2="8" y1="17" y2="17"></line>
-            <line x1="10" x2="8" y1="9" y2="9"></line>
-          </svg>
-          Created "Preline in React" task
-        </h3>
-        <p class="mt-1 text-sm text-gray-600 dark:text-neutral-400">
-          Find more detailed insctructions here.
-        </p>
-        <button type="button" class="mt-1 -ms-1 p-1 inline-flex items-center gap-x-2 text-xs rounded-lg border border-transparent text-gray-500 hover:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-neutral-400 dark:hover:bg-neutral-700">
-          <img class="flex-shrink-0 size-4 rounded-full" src="https://images.unsplash.com/photo-1659482633369-9fe69af50bfb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8auto=format&fit=facearea&facepad=3&w=320&h=320&q=80" alt="Image Description">
-          James Collins
-        </button>
-      </div>
-      <!-- End Right Content -->
-    </div>
-    <!-- End Item -->
-  
-    <!-- Item -->
-    <div class="flex gap-x-3">
-      <!-- Icon -->
-      <div class="relative last:after:hidden after:absolute after:top-7 after:bottom-0 after:start-3.5 after:w-px after:-translate-x-[0.5px] after:bg-gray-200 dark:after:bg-neutral-700">
-        <div class="relative z-10 size-7 flex justify-center items-center">
-          <div class="size-2 rounded-full bg-gray-400 dark:bg-neutral-600"></div>
-        </div>
-      </div>
-      <!-- End Icon -->
-  
-      <!-- Right Content -->
-      <div class="grow pt-0.5 pb-8">
-        <h3 class="flex gap-x-1.5 font-semibold text-gray-800 dark:text-white">
-          Release v5.2.0 quick bug fix 🐞
-        </h3>
-        <button type="button" class="mt-1 -ms-1 p-1 inline-flex items-center gap-x-2 text-xs rounded-lg border border-transparent text-gray-500 hover:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-neutral-400 dark:hover:bg-neutral-700">
-          <span class="flex flex-shrink-0 justify-center items-center size-4 bg-white border border-gray-200 text-[10px] font-semibold uppercase text-gray-600 rounded-full dark:bg-neutral-800 dark:border-neutral-700 dark:text-neutral-400">
-            A
-          </span>
-          Alex Gregarov
-        </button>
-      </div>
-      <!-- End Right Content -->
-    </div>
-    <!-- End Item -->
-  
-    <!-- Item -->
-    <div class="flex gap-x-3">
-      <!-- Icon -->
-      <div class="relative last:after:hidden after:absolute after:top-7 after:bottom-0 after:start-3.5 after:w-px after:-translate-x-[0.5px] after:bg-gray-200 dark:after:bg-neutral-700">
-        <div class="relative z-10 size-7 flex justify-center items-center">
-          <div class="size-2 rounded-full bg-gray-400 dark:bg-neutral-600"></div>
-        </div>
-      </div>
-      <!-- End Icon -->
-  
-      <!-- Right Content -->
-      <div class="grow pt-0.5 pb-8">
-        <h3 class="flex gap-x-1.5 font-semibold text-gray-800 dark:text-white">
-          Marked "Install Charts" completed
-        </h3>
-        <p class="mt-1 text-sm text-gray-600 dark:text-neutral-400">
-          Finally! You can check it out here.
-        </p>
-        <button type="button" class="mt-1 -ms-1 p-1 inline-flex items-center gap-x-2 text-xs rounded-lg border border-transparent text-gray-500 hover:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-neutral-400 dark:hover:bg-neutral-700">
-          <img class="flex-shrink-0 size-4 rounded-full" src="https://images.unsplash.com/photo-1659482633369-9fe69af50bfb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=3&w=320&h=320&q=80" alt="Image Description">
-          James Collins
-        </button>
-      </div>
-      <!-- End Right Content -->
-    </div>
-    <!-- End Item -->
-  
-    <!-- Heading -->
-    <div class="ps-2 my-2 first:mt-0">
-      <h3 class="text-xs font-medium uppercase text-gray-500 dark:text-neutral-400">
-        31 Jul, 2023
-      </h3>
-    </div>
-    <!-- End Heading -->
-  
-    <!-- Item -->
-    <div class="flex gap-x-3">
-      <!-- Icon -->
-      <div class="relative last:after:hidden after:absolute after:top-7 after:bottom-0 after:start-3.5 after:w-px after:-translate-x-[0.5px] after:bg-gray-200 dark:after:bg-neutral-700">
-        <div class="relative z-10 size-7 flex justify-center items-center">
-          <div class="size-2 rounded-full bg-gray-400 dark:bg-neutral-600"></div>
-        </div>
-      </div>
-      <!-- End Icon -->
-  
-      <!-- Right Content -->
-      <div class="grow pt-0.5 pb-8">
-        <h3 class="flex gap-x-1.5 font-semibold text-gray-800 dark:text-white">
-          Take a break ⛳️
-        </h3>
-        <p class="mt-1 text-sm text-gray-600 dark:text-neutral-400">
-          Just chill for now... 😉
-        </p>
-      </div>
-      <!-- End Right Content -->
-    </div>
-</div>
-    <!-- End Item -->
-  <!-- End Timeline -->
