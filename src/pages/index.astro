@@ -7,13 +7,12 @@ import ClientsSection from "@components/sections/landing/ClientsSection.astro";
 import FeaturesGeneral from "@components/sections/features/FeaturesGeneral.astro";
 import FeaturesNavs from "@components/sections/features/FeaturesNavs.astro";
 import TestimonialsSection from "@components/sections/testimonials/TestimonialsSection.astro";
-import PricingSection from "@components/sections/pricing/PricingSection.astro";
+import TimeLine from "@components/sections/landing/TimeLine.astro";
 import FAQ from "@components/sections/misc/FAQ.astro";
 import AnnouncementBanner from "@components/ui/banners/AnnouncementBanner.astro";
 import heroImage from "@images/hero-image.avif";
 import faqs from "@data/faqs.json";
 import features from "@data/features.json";
-import pricing from "@data/pricing.json";
 import featureImage from "@images/features-image.avif";
 import estucheCumpleaños from "@images/estuche-cumpleaños.jpg";
 import estucheAmistad from "@images/estuche-amistad.jpg";
@@ -92,43 +91,43 @@ import estucheAmor from "@images/estuche-amor.jpg";
   />
 
   <TestimonialsSection
-    title="Fast-Track Your Projects"
-    subTitle="At ScrewFast, we ensure a swift start with instant account setup. Experience the speed of construction redefined."
+    title="Las mejores reseñas"
+    subTitle="Tenemos una opinion excelente de parte de nuestros clientes y revendedores, cualquiera sea tu situación Latte es para vos."
     ;
     testimonials={[
       {
         content:
-          "ScrewFast dramatically boosted our project efficiency. Setup was instant, and their rapid response times are phenomenal. Truly a game-changer in hardware and construction support!",
+          "Son hermosos y se les nota el amor con el que están hechos y sobre todo pensados, las ideas son hermosas.",
         author: "Samantha Ruiz",
-        role: "Chief Operating Officer | ConstructIt Inc.",
+        role: "Cliente minorista",
         avatarSrc:
           "https://images.unsplash.com/photo-1593104547489-5cfb3839a3b5?q=80&w=1453&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D8&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80",
       },
     ]}
     statistics={[
       {
-        count: "70k+",
+        count: "100%",
         description:
-          "customers equipped — from DIY to major construction firms",
+          "Autenticos",
       },
       {
-        count: "35%",
+        count: "100%",
         description:
-          "uptick in project efficiency with ScrewFast tools and services",
+          "Ricos",
       },
       {
-        count: "15.3%",
+        count: "100%",
         description:
-          "reduction in maintenance costs reported by long-term clients",
+          "Originales",
       },
       {
-        count: "2x",
-        description: "quicker assembly using innovative fastening solutions",
+        count: "100%",
+        description: "Diseñados al detalle",
       },
     ]}
   />
 
-  <PricingSection pricing={pricing} />
+  <TimeLine />
 
   <FAQ title="Preguntas<br />frecuentes" faqs={faqs} />
 
