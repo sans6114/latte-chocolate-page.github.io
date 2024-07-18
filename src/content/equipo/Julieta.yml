@@ -1,0 +1,5 @@
+name: Julieta
+avatar: ./avatars/anna.avif
+cardImage: "@/images/blog/post-1.avif"
+bio: 'John Smith is a backend developer who specializes in building robust APIs and services. He is passionate about open-source projects and community-driven development.'
+subtitle: 'Backend Developer'

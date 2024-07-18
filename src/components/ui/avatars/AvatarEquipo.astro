@@ -1,0 +1,21 @@
+---
+// Import necessary components
+import { Image } from "astro:assets";
+
+
+const { equipoSrc, name } = Astro.props;
+
+interface Props {
+  equipoSrc: string,
+  name: string
+}
+---
+
+<div class="flex-shrink-0">
+  <Image
+    class="size-[46px] rounded-full border-2 border-neutral-50"
+    src={equipoSrc}
+    alt={name}
+    format={"avif"}
+  />
+</div>
