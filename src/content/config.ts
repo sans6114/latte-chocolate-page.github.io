@@ -63,6 +63,7 @@ const productsCollection = defineCollection({
   }),
 });
 
+
 const blogCollection = defineCollection({
   type: "content",
   schema: ({ image }) => z.object ({
@@ -92,23 +93,12 @@ const insightsCollection = defineCollection({
   }),
 });
 
-const equipoCollection = defineCollection({
-  type: 'data',
-  schema: ({image}) => z.object({
-      name: z.string(),
-      avatar: image().refine((img) => img.width > 300, {
-          message: 'you image should be lower than 300px'
-      }),
-      cardImage: image(),
-      bio: z.string(),
-      subtitle: z.string()
-  }),
-});
+
+
 
 export const collections = {
   docs: defineCollection({ schema: docsSchema() }),
   'products': productsCollection,
   'blog': blogCollection,
   'insights': insightsCollection,
-  'equipo' : equipoCollection
 };

@@ -1,0 +1,35 @@
+---
+
+import { getCollection } from "astro:content";
+import type { CollectionEntry } from "astro:content";
+import CardWorker from "./CardProductLatte.astro";
+
+
+
+
+const products  = await getCollection('productsLatte')
+
+
+---
+
+<swiper-container
+  class="mySwiper mb-10 rounded-2xl bg-primary-500 dark:bg-secondary-100 dark:bg-opacity-20 bg-opacity-20 p-10 shadow-2xl"
+  pagination="true"
+  pagination-clickable="true"
+  slides-per-view="1"
+  space-between="50"
+  free-mode="true"
+  parallax="true"
+>
+  {
+    products.map((producto) => (
+      <swiper-slide>
+        <CardWorker product={producto} />
+      </swiper-slide>
+    ))
+  }
+</swiper-container>
+
+<script
+  src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"
+></script>

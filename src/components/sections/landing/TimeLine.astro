@@ -7,8 +7,8 @@ interface DateItem {
   date?: string;
   titleDate: string;
   description: string;
-  author: string;
-  AvatarSrc: string;
+  author?: string;
+  AvatarSrc?: string;
 }
 
 interface Props {
@@ -32,7 +32,7 @@ const {
 
 <!-- Timeline -->
 <section
-  class="mt-10 flex items-center gap-10 rounded-3xl bg-primary-500 bg-opacity-20 p-2 shadow-2xl"
+  class="mt-10 flex items-center gap-10 rounded-3xl bg-primary-500 bg-opacity-20  dark:bg-secondary-100 dark:bg-opacity-20 p-2 shadow-2xl"
 >
   <div class="flex flex-col md:p-10 md:pb-0">
     <div class="p-4">
@@ -55,7 +55,6 @@ const {
             titleDate={datos.titleDate}
             description={datos.description}
             author={datos.author}
-            AvatarSrc={datos.AvatarSrc}
           />
         ))
       }
@@ -68,7 +67,7 @@ const {
   <div class="hidden h-full w-full md:flex md:justify-center">
     
 <svg
-class="w-[700px]"
+class="md:w-[300px] md:relative md:right-32 lg:right-10 lg:w-[700px]"
 version="1.1" viewBox="0 0 1250 1250"  xmlns="http://www.w3.org/2000/svg">
 <path transform="translate(453,68)" d="m0 0h72l274 2 72 1 20 4 12 5 12 7 13 11 9 10 5 8 8 21 5 22 2 18v181l-1 94-3 151-3 116-1 125-2 88-3 17-5 13-7 11-11 13-13 10-16 8-16 4h-104l2 5 1 8v29l-1 13 4 4v5l-3 3h-6l-1 5 59 4 52 5 44 6 36 7 23 6 21 8 9 6 5 6 1 6-3 5-8 7-16 7-19 6-31 7-37 6-52 6-51 4-65 3-51 1h-39l-51-1-47-2-57-4-40-4-49-7-35-7-24-7-17-7-9-7-3-4v-8l6-7 15-8 21-7 30-7 43-7 42-5 47-4 7-1 8-15 5-15 2-12v-14l-3-16-1-5h-40l-15-2h-16l-13-2-15-6-8-6-12-12-13-17-10-19-4-12-1-7v-84l4-313 1-54-7-1-15-6-15-10-12-11-10-10-11-15-8-16-8-20-6-5-10-5-10-7-2-4 2-9 5-4 12-1 4-12 4-4 9 1 5 4h17l5 5v9l-8 16-3 8 1 10 7 17 8 12 10 12 8 7 10 8 10 5 6 2 1 1 1-2 4-313 1-13 6-15 7-11 9-10 8-7 12-6zm105 937 3 4 1 5v32l-4 22-3 10v3h16l29-1h139l7-14 5-16 1-6v-27l-2-10-5-1-82-1z" fill="#C18046"/>
 <path transform="translate(600,1079)" d="m0 0h132l6 1-2 5-7 11-4 7v6l5 5 10 4 20 4h29l4-2 3-7v-8l-5-3-20-3-6-3-1-1v-7l3-7h14l46 3 52 5 44 6 36 7 23 6 21 8 9 6 5 6 1 6-3 5-8 7-16 7-19 6-31 7-37 6-52 6-51 4-65 3-51 1h-39l-51-1-47-2-57-4-40-4-49-7-35-7-24-7-17-7-9-7-3-4v-8l6-7 15-8 21-7 30-7 43-7 42-5 47-4h6l-2 5-10 13-2 4v6l4 5 13 6 18 4 17 2h10l4-5 3-5-1-5-7-6-6-2-13-2-3-2v-7l5-13z" fill="#DBDBCB"/>

@@ -1,21 +1,20 @@
 ---
 // Import necessary components
 import { Image } from "astro:assets";
+import type{ CollectionEntry } from "astro:content";
 
-
-const { equipoSrc, name } = Astro.props;
+const { equipo } = Astro.props;
 
 interface Props {
-  equipoSrc: string,
-  name: string
+  equipo: CollectionEntry<'equipo'>
 }
 ---
 
 <div class="flex-shrink-0">
   <Image
     class="size-[46px] rounded-full border-2 border-neutral-50"
-    src={equipoSrc}
-    alt={name}
+    src={equipo.data.avatar}
+    alt={equipo.data.name}
     format={"avif"}
   />
 </div>

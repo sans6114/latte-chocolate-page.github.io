@@ -1,21 +1,20 @@
 ---
-import type { GetStaticPaths } from "astro";
+import HeroSectionAlt from "@/components/sections/landing/HeroSectionAlt.astro";
 // Import necessary components
 import MainLayout from "@/layouts/MainLayout.astro";
 import MainSection from "@components/ui/blocks/MainSection.astro";
 import LeftSection from "@components/ui/blocks/LeftSection.astro";
 import RightSection from "@components/ui/blocks/RightSection.astro";
-import Workers from "@/components/sections/nosotros/Workers.astro";
 
 // Import necessary images
-import cacerola from "@images/recursos-latte/fábrica/cacerola.jpg"
-import camioneta from "@images/recursos-latte/fábrica/calu-camioneta.jpg"
-import fabrica1 from "@images/recursos-latte/fábrica/fabrica-1.jpg"
-import fabrica2 from "@images/recursos-latte/fábrica/fabrica-2.jpg"
-import fabrica3 from "@images/recursos-latte/fábrica/fabrica-3.jpg"
-import fabrica4 from "@images/recursos-latte/fábrica/fabrica-4.jpg"
-import fabrica5 from "@images/recursos-latte/fábrica/fabrica-5.jpg"
-import fabrica6 from "@images/recursos-latte/fábrica/fabrica-6.jpg"
+import cacerola from "@images/recursos-latte/fábrica/cacerola.jpg";
+import camioneta from "@images/recursos-latte/fábrica/calu-camioneta.jpg";
+import fabrica1 from "@images/recursos-latte/fábrica/fabrica-1.jpg";
+import fabrica2 from "@images/recursos-latte/fábrica/fabrica-2.jpg";
+import fabrica3 from "@images/recursos-latte/fábrica/fabrica-3.jpg";
+import fabrica4 from "@images/recursos-latte/fábrica/fabrica-4.jpg";
+import fabrica5 from "@images/recursos-latte/fábrica/fabrica-5.jpg";
+import fabrica6 from "@images/recursos-latte/fábrica/fabrica-6.jpg";
 import { SITE } from "@data/constants";
 
 interface Article {
@@ -44,7 +43,8 @@ const articles: Article[] = [
     imgOne: cacerola,
     imgOneAlt: "pot in which the first chocolate latte was founded",
     imgTwo: camioneta,
-    imgTwoAlt: "Person working in the officfounder of Latte chocolate distributing an order",
+    imgTwoAlt:
+      "Person working in the officfounder of Latte chocolate distributing an order",
     btnExists: true,
     btnTitle: "Blog",
     btnURL: "/blog",
@@ -315,14 +315,11 @@ const pageTitle: string = `Nosotros | ${SITE.title}`;
       );
     })
   }
-  <!-- component to watch the workers-->
-  <MainSection
-  title="Conoce nuestro equipo"
-  subTitle="Contamos con un equipo creativo, animado y capáz que hacen que Latte sea lo que es."
-  btnExists={false}
-/>
- <Workers /> 
+  <!-- component to use CTA -->
 
-
-
+  <HeroSectionAlt
+    title="No dudes más"
+    subTitle="Unite a nuestra red de revendedores y disfruta de múltiples beneficios"
+    url="./contact.astro"
+  />
 </MainLayout>
