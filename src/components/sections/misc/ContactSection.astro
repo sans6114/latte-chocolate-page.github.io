@@ -9,11 +9,11 @@ import TextAreaInput from "@components/ui/forms/input/TextAreaInput.astro";
 import Icon from "@components/ui/icons/Icon.astro";
 
 // Define the variables that will be used in this component
-const title: string = "Contact us";
+const title: string = "Contactanos para ser ditribuidor";
 const subTitle: string =
-  "Have questions or want to discuss a project? Reach out, and let's craft the perfect solution with our tools and services.";
-const formTitle: string = "Fill in the form below";
-const formSubTitle: string = "We'll get back to you in 1-2 business days.";
+  "description";
+const formTitle: string = "Llena el formulario y envianos tus datos";
+const formSubTitle: string = "Nos pondremos en contacto lo antes posible.";
 ---
 
 <!-- Contact Us -->
@@ -44,12 +44,12 @@ const formSubTitle: string = "We'll get back to you in 1-2 business days.";
             <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
               <TextInput
                 id="hs-firstname-contacts"
-                label="First Name"
+                label="Nombre"
                 name="hs-firstname-contacts"
               />
               <TextInput
                 id="hs-lastname-contacts"
-                label="Last Name"
+                label="Apellido"
                 name="hs-firstname-contacts"
               />
             </div>
@@ -57,13 +57,13 @@ const formSubTitle: string = "We'll get back to you in 1-2 business days.";
             <PhoneInput id="hs-phone-number" />
             <TextAreaInput
               id="hs-about-contacts"
-              label="Details"
+              label="Detalles"
               name="hs-about-contacts"
             />
           </div>
 
           <div class="mt-4 grid">
-            <AuthBtn title="Send Message" />
+            <AuthBtn title="Enviar" />
           </div>
 
           <div class="mt-3 text-center">
@@ -77,38 +77,31 @@ const formSubTitle: string = "We'll get back to you in 1-2 business days.";
       <!--ContactIconBlocks are used to display different methods of contacting, including visiting office, email, browsing knowledgebase, and FAQ.-->
       <div class="divide-y divide-neutral-300 dark:divide-neutral-700">
         <ContactIconBlock
-          heading="Knowledgebase"
-          content="Browse through all of our knowledgebase articles."
+          heading="Más sobre nosotros"
+          content="Aprende mas sobre la historia de Latte en nuestra sección 'nosotros'"
           isLinkVisible={true}
-          linkTitle="Visit guides & tutorials"
-          linkURL="#"
+          linkTitle="Visitar sección"
+          linkURL="nosotros"
           isArrowVisible={true}
           ><Icon name="question" />
         </ContactIconBlock>
 
         <ContactIconBlock
           heading="FAQ"
-          content="Explore our FAQ for quick, clear answers to common queries."
+          content="Visitá nuestra sección home en la que respondemos las preguntas mas comunes."
           isLinkVisible={true}
-          linkTitle="Visit FAQ"
-          linkURL="#"
+          linkTitle="Preguntas frecuentes"
+          linkURL="/"
           isArrowVisible={true}
           ><Icon name="chatBubble" />
         </ContactIconBlock>
 
-        <ContactIconBlock
-          heading="Visit our office"
-          content="UK ScrewFast"
-          isAddressVisible={true}
-          addressContent="72 Union Terrace, E10 4PE London"
-          ><Icon name="mapPin" />
-        </ContactIconBlock>
 
         <ContactIconBlock
-          heading="Contact us by email"
-          content="Prefer the written word? Drop us an email at"
+          heading="Contactanos via email"
+          content="¿Preferís otra forma de contactarte? escribinos a traves de tu correo electrónico."
           isLinkVisible={true}
-          linkTitle="support@screwfast.uk"
+          linkTitle="support@lattechocolate.com"
           linkURL="#"
           ><Icon name="envelopeOpen" />
         </ContactIconBlock>

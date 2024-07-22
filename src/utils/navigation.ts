@@ -18,22 +18,22 @@ const footerLinks = [
     ],
   },
   {
-    section: "Company",
+    section: "Navegación",
     links: [
-      { name: "About us", url: "#" },
-      { name: "Blog", url: "/blog" },
-      { name: "Careers", url: "#" },
-      { name: "Customers", url: "#" },
+      { name: "Inicio", url: "/" },
+      { name: "Nosotros", url: "/nosotros" },
+      { name: "productos", url: "/products" },
+      { name: "Tienda", url: "/tienda" },
+      { name: "Ser parte", url: "/serParte" },
+      { name: "Distribuir", url: "/contact" },
     ],
   },
 ];
 // An object of links for social icons
 const socialLinks = {
-  facebook: "https://www.facebook.com/",
-  x: "https://twitter.com/",
-  github: "https://github.com/mearashadowfax/ScrewFast",
-  google: "https://www.google.com/",
-  slack: "https://slack.com/",
+  facebook: "https://www.facebook.com/p/Latte-Chocolate-100063782032795/?locale=es_LA",
+  x: "https://www.instagram.com/latteechocolate/?hl=es",
+  github: "#",
 };
 
 export default {

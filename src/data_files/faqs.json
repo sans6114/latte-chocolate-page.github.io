@@ -1,30 +1,30 @@
 
 {
-  "subTitle": "Pregúntanos cualquier cosa sobre nuestra marca y productos, y obtén respuestas precisas.",
+  "subTitle": "Respondemos tus dudas mas frecuentes, estamos pendientes de ofrecerte el mejor producto siempre.",
   "faqs": [
     {
       "question": "¿Qué tipos de chocolates ofrecen en Latte Chocolate?",
-      "answer": "En Latte Chocolate ofrecemos una variedad de chocolates, desde los clásicos chocolates con leche y amargos hasta opciones más sofisticadas con rellenos de frutas, nueces y especias. Nuestra selección está diseñada para satisfacer todos los gustos."
+      "answer": "En Latte Chocolate ofrecemos chocolates de leche con mani, nuestro enfoque esta en las frases y el mensaje que tiene cada chocolate, cada tematica tiene diversas frases."
     },
     {
       "question": "¿Puedo personalizar los chocolates para un evento especial?",
-      "answer": "¡Por supuesto! Puedes personalizar tus chocolates para cualquier ocasión especial, como cumpleaños, bodas y aniversarios. Ofrecemos opciones de empaque personalizado y mensajes especiales. Contacta a nuestro equipo de soporte para hacer tu pedido."
+      "answer": "¡Por supuesto! Podes personalizar tus chocolates para cualquier ocasión especial, como cumpleaños, casamientos y aniversarios. Ofrecemos opciones de empaque personalizado y mensajes especiales. Contacta a nuestro equipo de soporte para hacer tu pedido."
     },
     {
       "question": "¿Qué descuentos ofrecen para pedidos al por mayor?",
-      "answer": "Ofrecemos descuentos exclusivos para pedidos al por mayor. El porcentaje de descuento puede variar según el volumen del pedido. Ponte en contacto con nosotros para discutir tus necesidades y te proporcionaremos una estructura de descuentos personalizada."
+      "answer": "Ofrecemos descuentos exclusivos para pedidos al por mayor. El porcentaje de descuento puede variar según el volumen del pedido. Ponete en contacto con nosotros para discutir tus necesidades y te proporcionaremos una estructura de descuentos personalizada."
     },
     {
       "question": "¿Qué tipo de soporte al cliente puedo esperar?",
-      "answer": "Todos nuestros clientes reciben soporte dedicado por correo electrónico. Con pedidos estándar, recibirás nuestro soporte básico, mientras que los pedidos personalizados y al por mayor cuentan con soporte prioritario, lo que significa tiempos de respuesta más rápidos y asistencia especializada."
+      "answer": "Todos nuestros clientes reciben soporte dedicado y ponemos mucho empeño en ofrecer la mejor atención posible."
     },
     {
-      "question": "¿Con qué frecuencia actualizan sus productos y recetas?",
-      "answer": "Actualizamos regularmente nuestros productos y recetas para reflejar las últimas tendencias en chocolatería y repostería. Nuestro objetivo es ofrecer productos innovadores y deliciosos para todos los amantes del chocolate."
+      "question": "¿Cuánto tarda en llegar?",
+      "answer": "El tiempo de espera para recibir tu producto latte va desde 3 a 5 dias habiles."
     },
     {
-      "question": "¿Latte Chocolate ofrece servicios para grandes eventos corporativos?",
-      "answer": "Sí, nuestros servicios están diseñados para grandes eventos corporativos que requieren soluciones integrales. Ofrecemos consultoría, planificación y suministro de chocolates de alta calidad, así como opciones de personalización para satisfacer las necesidades específicas de tu evento. Contáctanos para obtener una cotización personalizada."
+      "question": "¿Qué vencimiento tienen los chocolates?",
+      "answer": "Cada uno de nuestros productos posee 1 año de vigencia hasta su vencimiento."
     }
   ]
 }
