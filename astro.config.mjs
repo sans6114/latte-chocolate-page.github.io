@@ -35,7 +35,7 @@ export default defineConfig({
       }
     }
   }), starlight({
-    title: "ScrewFast Docs",
+    title: "Latte chocolate Docs",
     defaultLocale: "root",
     // https://github.com/withastro/starlight/blob/main/packages/starlight/CHANGELOG.md
     // If no Astro and Starlight i18n configurations are provided, the built-in default locale is used in Starlight and a matching Astro i18n configuration is generated/used.
@@ -107,9 +107,6 @@ export default defineConfig({
         directory: "advanced"
       }
     }],
-    social: {
-      github: "https://github.com/mearashadowfax/ScrewFast"
-    },
     disable404Route: true,
     customCss: ["./src/assets/styles/starlight.css"],
     favicon: "/favicon.ico",
@@ -123,13 +120,13 @@ export default defineConfig({
       tag: "meta",
       attrs: {
         property: "og:image",
-        content: "https://screwfast.uk" + "/social.webp"
+        //content: "https://lattepageproduction-c5njjnbn7-sans6114s-projects.vercel.app" + "/social.webp"
       }
     }, {
       tag: "meta",
       attrs: {
         property: "twitter:image",
-        content: "https://screwfast.uk" + "/social.webp"
+        //content: "https://screwfast.uk" + "/social.webp"
       }
     }]
   }), compressor({

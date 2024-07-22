@@ -1,7 +1,11 @@
-import type { APIRoute, ImageMetadata } from "astro";
-import { getImage } from "astro:assets";
-import icon from "@images/icon.png";
-import maskableIcon from "@images/icon-maskable.png";
+import type {
+  APIRoute,
+  ImageMetadata,
+} from 'astro';
+import { getImage } from 'astro:assets';
+
+import maskableIcon from '@images/icon-maskable.png';
+import icon from '@images/icon.png';
 
 interface Favicon {
   purpose: 'any' | 'maskable' | 'monochrome';
@@ -44,8 +48,8 @@ export const GET: APIRoute = async () => {
   );
 
   const manifest = {
-    short_name: "ScrewFast",
-    name: "ScrewFast",
+    short_name: "Latte",
+    name: "Latte chocolate",
     icons,
     display: "minimal-ui",
     id: "/",

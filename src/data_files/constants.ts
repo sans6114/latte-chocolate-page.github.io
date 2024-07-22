@@ -33,7 +33,7 @@ export const OG = {
   locale: "es",
   type: "website",
   url: SITE.url,
-  title: `${SITE.title}: : hocolates y alfajores ideales para regalar y disfrutar`,
+  title: `${SITE.title}: : Chocolates y alfajores ideales para regalar y disfrutar`,
   description: "Descubre Latte Chocolate, tu destino para chocolates y alfajores únicos. Encuentra el regalo perfecto o disfruta de momentos dulces con nuestros productos. ¡Explora nuestro catálogo y déjate tentar!",
   image: ogImageSrc,
 };
