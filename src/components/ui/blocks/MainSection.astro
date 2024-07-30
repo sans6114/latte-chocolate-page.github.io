@@ -7,7 +7,7 @@ const { title, subTitle, btnExists, btnTitle, btnURL } = Astro.props;
 // Define TypeScript interface for props
 interface Props {
   title: string;
-  subTitle: string;
+  subTitle?: string;
   btnExists?: boolean;
   btnTitle?: string;
   btnURL?: string;

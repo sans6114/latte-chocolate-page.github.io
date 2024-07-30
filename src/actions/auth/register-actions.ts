@@ -2,61 +2,53 @@ import {
   defineAction,
   z,
 } from 'astro:actions';
-import {
-  createUserWithEmailAndPassword,
-  sendEmailVerification,
-  updateProfile,
-} from 'firebase/auth';
-import type { AuthError } from 'firebase/auth/cordova';
 
-import { firebase } from '@/firebase/config';
+import { supabase } from '@/lib/supabase';
 
 export const registerUser = defineAction({
   accept: 'form',
   input: z.object({
-    name: z.string().min(2),
     email: z.string().min(2),
     password: z.string().min(6),
     remember_me: z.boolean().optional(),
   }),
-  handler: async ({ name, email, password, remember_me }, { cookies }) => {
-    //cookies recordando el email si tengo el valor rememberme en true
+  handler: async ({ email, password, remember_me }, { cookies }) => {
+    // Cookies recordando el email si tengo el valor remember_me en true
     if (remember_me) {
       cookies.set('email', email, {
-        expires: new Date(Date.now() + 1000 * 60 * 60 * 24 * 365),//1 año
-        path: '/'
-      })
+        expires: new Date(Date.now() + 1000 * 60 * 60 * 24 * 365), // 1 año
+        path: '/',
+      });
     } else {
       cookies.delete('email', {
-        path: '/'
-      })
+        path: '/',
+      });
     }
-    //creacion de usuario
+
+    // Creación de usuario
     try {
-      const user = await createUserWithEmailAndPassword(firebase.auth, email, password)
-      //console.log(user)
-      if (!firebase.auth.currentUser) return
-      //actualizar el nombre: 
-      await updateProfile(firebase.auth.currentUser!, {
-        displayName: name
-      })
-//verificacion
-await sendEmailVerification(firebase.auth.currentUser!, {
-  //url: 'http://localhost:4321/protected'
-  url: `${import.meta.env.WEBSITE_URL}/protected`
-})
-      return user
-    } catch (error) {
-      const firebaseError = error as AuthError
-      if (firebaseError.code === 'auth/email-already-in-use') {
-        throw new Error('Credenciales repetidas, intenta con otro email')
+      const { data, error } = await supabase.auth.signUp({
+        email: email,
+        password: password,
+      });
+
+      if (error) {
+        // Maneja errores específicos de Supabase
+        if (error.code === 'email_exists') {
+          throw new Error('El email proporcionado no es válido, ya existe.');
+        }
+        if (error.code === 'email_not_confirmed') {
+          throw new Error('El email no esta confirmado.');
+        }
+        throw new Error('Error al registrarse: ' + error.message);
       }
 
-      throw new Error('Algo salio mal')
+      return data.user;
+    } catch (error) {
+      // Maneja errores no específicos de Supabase
+      console.error('Error during sign-up:');
+      throw new Error('Algo salió mal durante el registro. Por favor, intenta nuevamente.');
     }
-    //si recibo la info
-    //console.log({name, email, password, remember_me})
-    return { ok: true, msg: 'Usuario creado' }
-  }
+  },
 })
 

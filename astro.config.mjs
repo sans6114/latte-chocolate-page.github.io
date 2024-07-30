@@ -1,10 +1,11 @@
 import compressor from 'astro-compressor';
 import { defineConfig } from 'astro/config';
-
 import sitemap from '@astrojs/sitemap';
 import starlight from '@astrojs/starlight';
 import tailwind from '@astrojs/tailwind';
-import vercelStatic from '@astrojs/vercel/static';
+import vercel from '@astrojs/vercel/serverless';
+
+import vue from "@astrojs/vue";
 
 // https://astro.build/config
 export default defineConfig({
@@ -119,24 +120,25 @@ export default defineConfig({
     head: [{
       tag: "meta",
       attrs: {
-        property: "og:image",
+        property: "og:image"
         //content: "https://lattepageproduction-c5njjnbn7-sans6114s-projects.vercel.app" + "/social.webp"
       }
     }, {
       tag: "meta",
       attrs: {
-        property: "twitter:image",
+        property: "twitter:image"
         //content: "https://screwfast.uk" + "/social.webp"
       }
     }]
   }), compressor({
     gzip: false,
     brotli: true
-  })],
-  output: "static",
+  }), vue()],
+  output: "server",
   experimental: {
     clientPrerender: true,
-    directRenderScript: true
+    directRenderScript: true,
+    actions: true
   },
-  adapter: vercelStatic()
+  adapter: vercel()
 });

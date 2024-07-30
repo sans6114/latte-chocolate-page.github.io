@@ -16,11 +16,13 @@
     "@astrojs/starlight-tailwind": "^2.0.3",
     "@astrojs/tailwind": "^5.1.0",
     "@astrojs/vercel": "^7.7.2",
+    "@astrojs/vue": "^4.5.0",
     "@preline/accordion": "^2.3.0",
     "@preline/collapse": "^2.3.0",
     "@preline/dropdown": "^2.3.0",
     "@preline/overlay": "^2.3.0",
     "@preline/tabs": "^2.3.0",
+    "@supabase/supabase-js": "^2.45.0",
     "astro": "^4.11.5",
     "astro-compressor": "^0.4.1",
     "clipboard": "^2.0.11",
@@ -31,9 +33,11 @@
     "preline": "^2.3.0",
     "sharp": "^0.33.4",
     "sharp-ico": "^0.1.5",
+    "sweetalert2": "^11.12.3",
     "swiper": "^11.1.5",
     "tailwindcss": "^3.4.4",
-    "typescript": "^5.5.3"
+    "typescript": "^5.5.3",
+    "vue": "^3.4.34"
   },
   "devDependencies": {
     "@tailwindcss/forms": "^0.5.7",
