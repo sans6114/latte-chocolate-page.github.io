@@ -13,18 +13,13 @@ export const loginGoogle = defineAction({
     accept: 'json',
     input: z.any(),
     handler: async (credentials) => {
-      
-      
+     
       const credential = GoogleAuthProvider.credentialFromResult(credentials) 
       if (!credential) {
-        throw new Error('Google salio mal')
-        
+        throw new Error('Autenticación con google salio mal')
       }
 
  await signInWithCredential( firebase.auth, credential)
-      
-      
-      
         return { ok: true, msg: 'Usuario validado' }
     }
   })

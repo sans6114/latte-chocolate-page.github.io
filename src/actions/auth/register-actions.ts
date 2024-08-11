@@ -43,7 +43,7 @@ export const registerUser = defineAction({
 //verificacion
 await sendEmailVerification(firebase.auth.currentUser!, {
   //url: 'http://localhost:4321/protected'
-  url: `${import.meta.env.WEBSITE_URL}/protected`
+  url: `${import.meta.env.WEBSITE_URL}/Verified`
 })
       return user
     } catch (error) {

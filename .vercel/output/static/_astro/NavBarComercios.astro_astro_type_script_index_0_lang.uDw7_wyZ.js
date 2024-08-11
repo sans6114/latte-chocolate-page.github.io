@@ -1,0 +1,1 @@
+import{a as o}from"./_astro_actions.CR7AzrjM.js";import"./Navbar.astro_astro_type_script_index_0_lang.oA0jSeNH.js";const t=document.querySelector("#logOut");t.addEventListener("click",async()=>{await o.logOut(),window.location.replace("/")});

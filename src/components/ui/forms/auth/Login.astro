@@ -1,14 +1,6 @@
 ---
-import PrimaryCTA from "../../buttons/PrimaryCTA.astro";
 import LoginGoogle from "./LoginGoogle.astro";
 
-interface Props {
-  title: string;
-  isRegister?: boolean;
-  textButton: string;
-}
-
-const { title, textButton, isRegister = false } = Astro.props;
 const email = Astro.cookies.get("email")?.value ?? "";
 const remember = !!email;
 console.log(remember);
@@ -88,7 +80,7 @@ console.log(remember);
       </div>
       <div class="flex flex-col items-center">
         <button
-        id="btn-submit"
+          id="btn-submit"
           type="submit"
           class="hover:bg-blue-600 focus:ring-blue-500 mx-auto w-1/2 rounded-lg bg-primary-100 px-4 py-2 text-black focus:outline-none focus:ring-2 focus:ring-opacity-50"
           >Entrar</button
@@ -100,7 +92,7 @@ console.log(remember);
             class="text-blue-600 dark:text-blue-500 font-medium decoration-2 hover:underline focus:underline focus:outline-none"
             href="#"
           >
-            Resgitrate aqui
+            Resgistrate aqui
           </a>
         </p>
       </div>
@@ -111,13 +103,45 @@ console.log(remember);
 <script>
   import { actions } from "astro:actions";
   import Swal from "sweetalert2";
+  //google provider
+  import { signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+  import { firebase } from "@/firebase/config";
 
   document.addEventListener("DOMContentLoaded", () => {
     const form = document.querySelector("form") as HTMLFormElement;
+    const btnGoogle = document.querySelector(
+      "#btn-google"
+    ) as HTMLButtonElement;
     const buttonSubmit = document.querySelector(
       "#btn-submit"
     ) as HTMLButtonElement;
-    //console.log(buttonSubmit, form)
+
+    //listener googlebutton
+    btnGoogle.addEventListener("click", async () => {
+      console.log('hola')
+      const provider = new GoogleAuthProvider();
+      btnGoogle.setAttribute("disabled", "disabled");
+
+      try {
+        const credentials = await signInWithPopup(firebase.auth, provider);
+        const { data, error } = await actions.loginGoogle.safe(credentials);
+        if (error) {
+         
+          Swal.fire({
+            icon: "error",
+            title: "Credenciales invalidas",
+            text: error.message,
+          });
+        }
+
+        btnGoogle.innerHTML = "redireccionando...";
+        window.location.replace("comercios");
+      } catch (error) {
+        console.log(error)
+      } finally{
+        btnGoogle.removeAttribute('disabled')
+      }
+    });
 
     form.addEventListener("submit", async (e) => {
       e.preventDefault();

@@ -1,10 +1,6 @@
 ---
 import LoginGoogle from './LoginGoogle.astro';
-interface Props {
-  title: string;
-  isRegister?: boolean;
-  textButton: string;
-}
+
 
 const email = Astro.cookies.get("email")?.value ?? "";
 const remember = !!email;

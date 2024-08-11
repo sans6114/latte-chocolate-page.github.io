@@ -1,0 +1,199 @@
+/* empty css                         */
+import { m as createAstro, n as createComponent, o as renderTemplate, p as maybeRenderHead, s as renderComponent } from './astro/server_DyaX1Ozq.mjs';
+import 'kleur/colors';
+import { $ as $$HeroSectionAlt } from './HeroSectionAlt_vNebsabH.mjs';
+import { a as $$MainLayout } from './MainLayout_WeXfuK4m.mjs';
+import { $ as $$MainSection } from './MainSection_Boxcb-S_.mjs';
+import { $ as $$Image } from './_astro_assets_dVBWH8v7.mjs';
+import { $ as $$PrimaryCTA } from './PrimaryCTA_CYLibHAE.mjs';
+import { S as SITE } from './NavLink_CCaNeEAr.mjs';
+
+const $$Astro$1 = createAstro("https://screwfast.uk");
+const $$LeftSection = createComponent(($$result, $$props, $$slots) => {
+  const Astro2 = $$result.createAstro($$Astro$1, $$props, $$slots);
+  Astro2.self = $$LeftSection;
+  const { title, subTitle, btnExists, btnTitle, btnURL, img, imgAlt } = Astro2.props;
+  return renderTemplate`<!-- The root section of the component -->${maybeRenderHead()}<section class="mx-auto max-w-[85rem] items-center gap-8 px-4 py-10 sm:px-6 sm:py-16 md:grid md:grid-cols-2 lg:grid lg:grid-cols-2 lg:px-8 lg:py-14 xl:gap-16 2xl:max-w-full"> <!-- The Image component which renders the image --> ${renderComponent($$result, "Image", $$Image, { "class": "w-full rounded-xl", "src": img, "alt": imgAlt, "draggable": "false", "format": "avif" })} <!-- The container for title, subtitle, and optional CTA button --> <div class="mt-4 md:mt-0"> <!-- The title of the section --> <h2 class="mb-4 text-balance text-4xl font-extrabold tracking-tight text-neutral-800 dark:text-neutral-200"> ${title} </h2> <!-- The subtitle of the section --> <p class="mb-4 max-w-prose text-pretty font-light text-neutral-600 dark:text-neutral-400 sm:text-lg"> ${subTitle} </p> <!-- Conditionally render the Primary CTA button if btnExists is true --> ${btnExists ? renderTemplate`${renderComponent($$result, "PrimaryCTA", $$PrimaryCTA, { "title": btnTitle, "url": btnURL })}` : null} </div> </section>`;
+}, "C:/Users/PC/Desktop/latte-chocolate-page/latte-page/src/components/ui/blocks/LeftSection.astro", void 0);
+
+const $$Astro = createAstro("https://screwfast.uk");
+const $$RightSection = createComponent(($$result, $$props, $$slots) => {
+  const Astro2 = $$result.createAstro($$Astro, $$props, $$slots);
+  Astro2.self = $$RightSection;
+  const {
+    title,
+    subTitle,
+    btnExists,
+    btnTitle,
+    btnURL,
+    single,
+    imgOne,
+    imgOneAlt,
+    imgTwo,
+    imgTwoAlt
+  } = Astro2.props;
+  return renderTemplate`<!-- Root section of the component -->${maybeRenderHead()}<section class="mx-auto max-w-[85rem] items-center gap-16 px-4 py-10 sm:px-6 lg:grid lg:grid-cols-2 lg:px-8 lg:py-14 2xl:max-w-full"> <div> <!-- Title of the section --> <h2 class="mb-4 text-balance text-4xl font-extrabold tracking-tight text-neutral-800 dark:text-neutral-200"> ${title} </h2> <!-- Subtitle of the section --> <p class="mb-4 max-w-prose text-pretty font-light text-neutral-600 dark:text-neutral-400 sm:text-lg"> ${subTitle} </p> <!-- Conditional rendering of the Primary Call-To-Action button if 'btnExists' is true --> ${btnExists ? renderTemplate`${renderComponent($$result, "PrimaryCTA", $$PrimaryCTA, { "title": btnTitle, "url": btnURL })}` : null} </div> <!-- Conditionally render one or two images based on 'single' property --> ${single ? renderTemplate`<div class="mt-8"> <!-- Single image --> ${renderComponent($$result, "Image", $$Image, { "class": "w-full rounded-lg", "src": imgOne, "alt": imgOneAlt, "format": "avif" })} </div>` : renderTemplate`<div class="mt-8 grid grid-cols-2 gap-4"> <!-- First image in a two-image layout --> ${renderComponent($$result, "Image", $$Image, { "class": "w-full rounded-xl", "src": imgOne, "alt": imgOneAlt, "draggable": "false", "format": "avif" })} <!-- Second image in a two-image layout --> ${renderComponent($$result, "Image", $$Image, { "class": "mt-4 w-full rounded-xl lg:mt-10", "src": imgTwo, "alt": imgTwoAlt, "draggable": "false", "format": "avif" })} </div>`} </section>`;
+}, "C:/Users/PC/Desktop/latte-chocolate-page/latte-page/src/components/ui/blocks/RightSection.astro", void 0);
+
+const cacerola = new Proxy({"src":"/_astro/cacerola.DDj9b1YI.jpg","width":1440,"height":1800,"format":"jpg","orientation":1}, {
+						get(target, name, receiver) {
+							if (name === 'clone') {
+								return structuredClone(target);
+							}
+							if (name === 'fsPath') {
+								return "C:/Users/PC/Desktop/latte-chocolate-page/latte-page/src/images/recursos-latte/fábrica/cacerola.jpg";
+							}
+							
+							return target[name];
+						}
+					});
+
+const camioneta = new Proxy({"src":"/_astro/calu-camioneta.nhrHpqlv.jpg","width":1440,"height":1800,"format":"jpg","orientation":1}, {
+						get(target, name, receiver) {
+							if (name === 'clone') {
+								return structuredClone(target);
+							}
+							if (name === 'fsPath') {
+								return "C:/Users/PC/Desktop/latte-chocolate-page/latte-page/src/images/recursos-latte/fábrica/calu-camioneta.jpg";
+							}
+							
+							return target[name];
+						}
+					});
+
+const fabrica1 = new Proxy({"src":"/_astro/fabrica-1.Cw80_pC8.jpg","width":5168,"height":3448,"format":"jpg"}, {
+						get(target, name, receiver) {
+							if (name === 'clone') {
+								return structuredClone(target);
+							}
+							if (name === 'fsPath') {
+								return "C:/Users/PC/Desktop/latte-chocolate-page/latte-page/src/images/recursos-latte/fábrica/fabrica-1.jpg";
+							}
+							
+							return target[name];
+						}
+					});
+
+const fabrica2 = new Proxy({"src":"/_astro/fabrica-2.DnjY1xZ8.jpg","width":5168,"height":3448,"format":"jpg"}, {
+						get(target, name, receiver) {
+							if (name === 'clone') {
+								return structuredClone(target);
+							}
+							if (name === 'fsPath') {
+								return "C:/Users/PC/Desktop/latte-chocolate-page/latte-page/src/images/recursos-latte/fábrica/fabrica-2.jpg";
+							}
+							
+							return target[name];
+						}
+					});
+
+const fabrica3 = new Proxy({"src":"/_astro/fabrica-3.C76_Rbop.jpg","width":7952,"height":5304,"format":"jpg"}, {
+						get(target, name, receiver) {
+							if (name === 'clone') {
+								return structuredClone(target);
+							}
+							if (name === 'fsPath') {
+								return "C:/Users/PC/Desktop/latte-chocolate-page/latte-page/src/images/recursos-latte/fábrica/fabrica-3.jpg";
+							}
+							
+							return target[name];
+						}
+					});
+
+const fabrica5 = new Proxy({"src":"/_astro/fabrica-5.B-ft_uO8.jpg","width":7952,"height":5304,"format":"jpg"}, {
+						get(target, name, receiver) {
+							if (name === 'clone') {
+								return structuredClone(target);
+							}
+							if (name === 'fsPath') {
+								return "C:/Users/PC/Desktop/latte-chocolate-page/latte-page/src/images/recursos-latte/fábrica/fabrica-5.jpg";
+							}
+							
+							return target[name];
+						}
+					});
+
+const fabrica6 = new Proxy({"src":"/_astro/fabrica-6.DPvV4XCy.jpg","width":7952,"height":5304,"format":"jpg"}, {
+						get(target, name, receiver) {
+							if (name === 'clone') {
+								return structuredClone(target);
+							}
+							if (name === 'fsPath') {
+								return "C:/Users/PC/Desktop/latte-chocolate-page/latte-page/src/images/recursos-latte/fábrica/fabrica-6.jpg";
+							}
+							
+							return target[name];
+						}
+					});
+
+const $$Index = createComponent(($$result, $$props, $$slots) => {
+  const articles = [
+    {
+      isRightSection: true,
+      title: "Donde comenzamos",
+      subTitle: "Todo empezo con un caserola y una chica con un objetivo, si un simple artefacto de la cocina iba a ser el origen de una marca que hoy en dia es cada vez mas grande.",
+      single: false,
+      imgOne: cacerola,
+      imgOneAlt: "pot in which the first chocolate latte was founded",
+      imgTwo: camioneta,
+      imgTwoAlt: "Person working in the officfounder of Latte chocolate distributing an order",
+      btnExists: true,
+      btnTitle: "Blog",
+      btnURL: "/blog"
+    },
+    {
+      isRightSection: false,
+      title: "Crecimos",
+      subTitle: "Hoy en dia todo es diferente, pasamos de una cocinita a una fabrica con gente de lujo, un producto revelador y \xFAnico, para que puedas usarlo para regalar, como para emprender.",
+      img: fabrica1,
+      imgAlt: "Construction site before and after",
+      btnExists: true,
+      btnTitle: "Quiero distribuir",
+      btnURL: "/contact"
+    },
+    {
+      isRightSection: true,
+      title: "Productos originales",
+      subTitle: "Establecimos nuestros productos con un objetivo muy claro, el transmitir algo con un dulce, que hace que un simple dulce sea mucho m\xE1s. Conoce nuestra tienda o contactanos para distribuir Latte.",
+      single: false,
+      imgOne: fabrica2,
+      imgOneAlt: "Construction workers orchestrating a project",
+      imgTwo: fabrica3,
+      imgTwoAlt: "Aerial view of managed construction"
+    },
+    {
+      isRightSection: true,
+      title: "Equipo con un valor inmenso",
+      subTitle: "En Latte cada miembro es especial, cada persona que forma parte de ya sea del producto final o aportando una idea es esencial para mantener a la marca en lo alto, abajo tendras una presentaci\xF3n especial del equipo.",
+      single: false,
+      imgOne: fabrica6,
+      imgOneAlt: "In progress building structure",
+      imgTwo: fabrica5,
+      imgTwoAlt: "Brown and gray building under construction",
+      btnExists: false
+    }
+  ];
+  const pageTitle = `Nosotros | ${SITE.title}`;
+  return renderTemplate`${renderComponent($$result, "MainLayout", $$MainLayout, { "title": pageTitle, "structuredData": {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": "https://screwfast.uk/services",
+    url: "https://screwfast.uk/services",
+    name: "Expert Consultation Services | ScrewFast",
+    description: "Uniting expertise with your vision, ScrewFast provides exceptional service and comprehensive solutions in the hardware and construction industry, from consultation to project completion.",
+    isPartOf: {
+      "@type": "WebSite",
+      url: "https://screwfast.uk",
+      name: "ScrewFast",
+      description: "ScrewFast offers top-tier hardware tools and expert construction services to meet all your project needs."
+    },
+    inLanguage: "es"
+  } }, { "default": ($$result2) => renderTemplate` ${maybeRenderHead()}<section class="flex"> <div> ${renderComponent($$result2, "MainSection", $$MainSection, { "title": "Conocenos un poco m\xE1s", "subTitle": "Nuestra historia y valores hacen de Latte un negocio \xFAnico. Ya sea comprando un chocolate para un ser querido o revendiendo nuestros productos, eres parte esencial de nuestra visi\xF3n y misi\xF3n.", "btnExists": false, "btnTitle": "", "btnURL": "#" })} </div> <div class="hidden md:flex"> <svg class="w-[80px] md:w-[200px]" fill="none" stroke-width="1.5" color="#fbbf24" viewBox="0 0 1250 1251"> <path transform="translate(746,93)" d="m0 0h28l16 4 12 5 11 7 11 9 8 9 12 22 7 19 5 22 7 50 13 85 13 92 13 98 31 248 13 89 7 59 2 13v16l-3 15-6 15-8 12-11 12-12 9 4 3 15 8 13 10 15 15 3 4 6-8 5-2 6 1 5 5 1 6-5 10-8 10-7 5-6 1-6-3-10-15-10-11-15-11-16-8-15-5-10-2h-14l-292 40-36 6-26 2h-11l-8 2h-14l-16-4-8-4-14-11-18-18-9-13-6-12-4-13-44-325-5-39-9-1-25-7-26-10-24-12-19-12-13-10-13-11-18-18-5-7-10 3-15 4-9 1h-9l-5-3-3-4v-7l5-6 4-1 13-1 2-1-13-10-4-4-1-8 4-6 7-2 7 3 8 7 6 4-4-6-8-10-1-7 3-5 5-3 7 1 6 5 11 14v2h2l4-18 6-5h7l6 5 1 7-3 14-8 16-5 6 2 4 11 12 11 11 14 11 16 11 16 9 16 8 23 9 24 7-21-154-32-236v-8l4-15 5-12 8-12 10-10 11-6 13-4 120-17z" fill="#C28146"></path> <path transform="translate(746,93)" d="m0 0h28l16 4 12 5 11 7 11 9 8 9 12 22 2 5-1 3-14-14-7-8-10-7-12-5-10-2h-13l-376 49-17 4-16 6-10 6-10 9-7 9-5 12-3 14v18l14 106 41 313 42 321 5 17 8 16 10 15 9 11 10 6 19 7 7 3-2 2-5 1h-14l-16-4-8-4-14-11-18-18-9-13-6-12-4-13-44-325-5-39-9-1-25-7-26-10-24-12-19-12-13-10-13-11-18-18-5-7-10 3-15 4-9 1h-9l-5-3-3-4v-7l5-6 4-1 13-1 2-1-13-10-4-4-1-8 4-6 7-2 7 3 8 7 6 4-4-6-8-10-1-7 3-5 5-3 7 1 6 5 11 14v2h2l4-18 6-5h7l6 5 1 7-3 14-8 16-5 6 2 4 11 12 11 11 14 11 16 11 16 9 16 8 23 9 24 7-21-154-32-236v-8l4-15 5-12 8-12 10-10 11-6 13-4 120-17z" fill="#8E511C"></path> <path transform="translate(705,871)" d="m0 0h25l12 5 9 7 6 8 2 6 7 45 4 31-1 10-6 12-8 9-10 5-21 5-34 3-14-2-14-5-10-7-6-7-3-8-7-41-3-22v-17l3-10 6-9 10-7 15-6 22-3z" fill="#A35D34"></path> <path transform="translate(867,847)" d="m0 0h22l12 5 9 7 6 8 3 10 7 46 3 23v11l-5 12-7 9-9 6-17 5-13 2-25 2-15-1-15-5-10-6-8-9-3-9-8-49-2-20 1-13 4-10 7-8 8-5 16-6 31-4z" fill="#A45E35"></path> <path transform="translate(515,722)" d="m0 0h29l14 7 7 6 6 10 7 43 4 29v16l-7 14-6 7-12 6-16 4-28 3h-18l-15-4-10-5-10-9-4-9-5-27-5-34v-22l4-11 7-8 10-6 12-5 21-3z" fill="#A35D34"></path> <path transform="translate(432,251)" d="m0 0h25l12 5 10 9 5 7 3 13 7 46 2 15v16l-4 9-6 9-7 6-10 4-18 4-34 3-15-2-13-5-9-6-5-5-3-4-4-16-7-44-1-8v-21l4-11 7-8 10-6 14-5 14-2z" fill="#A35D34"></path> <path transform="translate(804,499)" d="m0 0h25l12 5 10 8 6 10 6 34 5 37 1 11-2 9-5 10-8 9-10 5-21 5-34 3-14-2-14-5-9-6-7-8-3-7-6-35-4-28v-19l4-11 6-8 11-7 13-5 12-2z" fill="#A35D34"></path> <path transform="translate(644,530)" d="m0 0h25l12 5 9 7 7 10 3 16 6 39 3 24v7l-4 11-6 9-8 7-10 4-18 4-34 3-14-2-16-6-9-7-6-8-3-11-7-44-2-16v-14l2-9 5-8 9-8 10-5 14-4z" fill="#A35D34"></path> <path transform="translate(550,894)" d="m0 0h26l10 4 9 7 6 7 3 6 7 44 4 30v12l-5 12-7 9-10 6-18 5-15 2-14 1h-19l-12-3-14-7-7-6-5-10-5-27-5-33v-26l4-9 7-8 10-6 13-5 21-3z" fill="#A35D34"></path> <path transform="translate(492,553)" d="m0 0h19l11 4 8 6 7 7 4 9 7 45 4 31-1 10-7 14-5 6-14 7-17 4-32 3-14-1-11-3-14-7-8-8-4-10-7-41-3-23v-15l3-11 4-6 9-8 11-5 9-3 23-3z" fill="#A45E35"></path> <path transform="translate(832,675)" d="m0 0h28l12 5 10 9 5 8 2 8 7 45 3 23v12l-8 16-7 7-8 4-14 4-21 3-11 1h-18l-13-3-14-7-6-5-5-8-4-18-7-45-1-16 2-13 4-8 8-8 14-7 16-4z" fill="#A45E35"></path> <path transform="translate(695,698)" d="m0 0 10 3 9 5 7 6 5 8 4 20 7 47 1 9v13l-4 10-7 9-7 6-15 5-15 3-22 2h-16l-16-4-10-5-10-9-4-8-8-47-2-14v-24l3-9 9-10 10-6 15-5 31-4z" fill="#A45E35"></path> <path transform="translate(749,196)" d="m0 0h26l12 5 9 7 6 8 2 6 7 45 4 31-1 10-6 12-8 9-10 5-21 5h-10l-9-8-15-8-15-4h-19l-10 1-3-7-7-41-3-22v-17l3-10 6-9 10-7 15-6 22-3z" fill="#A45E35"></path> <path transform="translate(610,221)" d="m0 0 12 4 10 7 7 8 3 8 7 45 4 32-2 11-5 10-7 8-12 6-7 2h-8l-8-8-14-8-11-4-5-1h-23l-12 3-7 3h-3l-4-13-7-43-2-15v-18l3-10 6-8 8-6 16-7 10-2 26-3z" fill="#A45E35"></path> <path transform="translate(701,318)" d="m0 0h19l15 4 15 8 12 11 7 10 5 11 3 11 1 7v10l-3 16-8 16-6 8-9 9-11 7-14 5-11 2h-12l-14-3-12-5-11-7-9-9-9-14-5-14-1-5v-22l4-14 7-13 10-12 11-8 13-6z" fill="#FCFCFB"></path> <path transform="translate(551,340)" d="m0 0h23l14 4 13 7 10 9 8 9 7 14 3 11 1 6v14l-3 14-8 16-7 9-7 7-11 7-12 5-9 2h-22l-14-4-13-7-10-9-8-9-8-16-3-12v-20l4-15 8-15 10-11 13-9 12-5z" fill="#FCFCFB"></path> <path transform="translate(1079,381)" d="m0 0 9 1 4 5v8l-10 15v2l16-15h9l5 5 1 7-3 5-12 12h-2v2h19l6 5 1 7-3 5-4 3-14 1-16-2-13-3-10 14-9 11-12 13-16 16-11 9-13 10-18 12-18 10-21 10-14 5-7-1-5-5v-9l6-5 26-11 20-11 18-12 13-10 14-12 18-18 9-11 10-13 2-5-10-12-7-15-2-7v-7l3-5 3-2h8l5 4 5 15 2 2 10-16z" fill="#1F1F1C"></path> <path transform="translate(221,476)" d="m0 0h7l6 5 1 7-3 14-8 16-5 6 2 4 11 12 11 11 14 11 16 11 16 9 16 8 23 9 24 7 2 7 1 14-9-1-25-7-26-10-24-12-19-12-13-10-13-11-18-18-5-7-10 3-15 4-9 1h-9l-5-3-3-4v-7l5-6 4-1 13-1 2-1-13-10-4-4-1-8 4-6 7-2 7 3 8 7 6 4-4-6-8-10-1-7 3-5 5-3 7 1 6 5 11 14v2h2l4-18z" fill="#201F1C"></path> <path transform="translate(687,346)" d="m0 0h19l12 5 9 7 7 10 4 11v16l-4 12-7 9-8 7-12 5-5 1h-11l-11-3-10-6-7-7-7-14-1-4v-15l3-10 7-11 7-6 12-6z" fill="#010000"></path> <path transform="translate(548,377)" d="m0 0h18l11 4 10 7 6 8 4 8 2 8v13l-3 10-6 10-10 9-12 5-5 1h-12l-10-3-10-6-8-8-6-12-1-4v-17l4-11 6-9 8-7 11-5z" fill="#010000"></path> <path transform="translate(870,994)" d="m0 0 13 1 17 4 17 6 17 9 13 10 15 15 3 4 6-8 5-2 6 1 5 5 1 6-5 10-8 10-7 5-6 1-6-3-10-15-10-11-15-11-16-8-15-5-21-4-5-3-2-4v-6l5-6z" fill="#1F1F1C"></path> <path transform="translate(632,1049)" d="m0 0h6l6 4 1 2v9l-2 14v13l3 19 5 16 7 16 7 11 1 5-3 7-8 5-16 4h-8l-6-5-1-2v-6l4-6 7-2h5l-9-19-6-19-3-17v-26l3-16 3-5z" fill="#201F1C"></path> <path transform="translate(499,489)" d="m0 0h12l11 3 9 6 3 6v7l-4 6-5 4-11 4h-18l-11-4-7-6-2-4v-8l5-7 9-5z" fill="#F8C1B6"></path> <path transform="translate(783,439)" d="m0 0h14l10 3 8 5 4 6v7l-4 6-7 5-10 3h-16l-12-4-8-7-1-3v-7l4-6 5-4z" fill="#F8C1B6"></path> <path transform="translate(662,479)" d="m0 0h6l4 3 1 10-3 10-4 6-9 8-11 4h-11l-11-4-9-7-6-10-1-3v-9l3-3 7-1 4 4 4 9 4 5 9 3 9-2 5-4 4-10 3-7z" fill="#010101"></path> <path transform="translate(570,894)" d="m0 0 9 1 10 5 10 9 5 9 7 44 4 30v12l-5 12-7 9-10 6-18 5-6 1h-14l4-2 21-5 9-4 8-7 5-8 2-6 1-7v-9l-7-49-5-22-5-12-5-5-10-5z" fill="#8F511D"></path> <path transform="translate(508,554)" d="m0 0 9 1 10 5 10 10 4 9 7 45 4 31-1 10-7 14-5 6-14 7-17 4-8 1h-11l4-2 25-6 10-5 7-7 5-10 1-4v-20l-7-47-5-21-6-12-5-4-10-4z" fill="#8F511D"></path> <path transform="translate(886,848)" d="m0 0 9 1 12 7 8 9 3 7 6 37 5 37v11l-5 12-7 9-9 6-17 5-13 2h-12l4-2 26-6 11-6 6-7 5-11 1-16-7-49-5-23-4-10-6-7-8-4z" fill="#8F511D"></path> <path transform="translate(725,871)" d="m0 0 8 1 12 6 7 6 5 7 2 6 7 45 4 31-1 10-6 12-8 9-10 5-21 5h-14l4-2 21-5 12-6 7-8 4-9 1-4v-19l-7-47-5-21-6-12-6-5-10-4z" fill="#8F511D"></path> <path transform="translate(537,722)" d="m0 0h7l14 7 7 6 6 10 7 43 4 29v16l-7 14-6 7-12 6-16 4-6 1h-14l4-2 22-5 9-4 7-5 6-10 2-5 1-6v-14l-7-48-5-21-4-10-6-7-9-4z" fill="#8F511D"></path> <path transform="translate(664,530)" d="m0 0 8 1 12 6 8 7 5 8 3 16 6 39 3 24v7l-4 11-6 9-8 7-10 4-18 4h-14l4-2 21-5 9-4 8-7 6-11 1-4v-21l-7-47-4-18-5-11-6-7-12-5z" fill="#8F511D"></path> <path transform="translate(770,196)" d="m0 0 8 1 12 6 8 7 5 9 4 21 7 49 1 14-3 10-7 11-8 7-10 4-18 4h-10v-2l21-5 12-6 7-8 4-9 1-4v-19l-7-47-5-21-6-12-6-5-10-4z" fill="#8F511D"></path> <path transform="translate(854,675)" d="m0 0 9 1 12 6 9 9 4 8 7 44 4 30v12l-8 16-7 7-8 4-14 4-11 2h-13l4-2 22-5 12-6 8-9 4-10 1-15-7-50-5-22-4-10-5-7-8-4-6-2z" fill="#8F511D"></path> <path transform="translate(695,698)" d="m0 0 10 3 9 5 7 6 5 8 4 20 7 47 1 9v13l-4 10-7 9-7 6-15 5-15 3h-13l4-2 25-6 9-5 8-9 4-10 1-6v-11l-7-49-5-22-4-10-6-7-12-5z" fill="#8F511D"></path> <path transform="translate(824,499)" d="m0 0 8 1 12 6 7 6 6 10 6 34 5 37 1 11-2 9-5 10-8 9-10 5-21 5h-14l4-2 21-5 12-6 7-8 4-9 1-5v-17l-7-48-5-21-6-12-8-6-8-3z" fill="#8F511D"></path> <path transform="translate(453,251)" d="m0 0 7 1 12 6 9 9 4 8 6 35 5 36v16l-4 9-6 9-7 6-10 4-18 4h-14l4-2 21-5 12-6 7-8 4-10 1-5v-15l-7-48-5-21-4-9-5-7-12-6z" fill="#8F511D"></path> <path transform="translate(610,221)" d="m0 0 12 4 10 7 7 8 3 8 7 45 4 32-2 11-5 10-7 8-12 6-7 2h-8v-2l15-6 7-6 5-8 3-10v-18l-7-47-5-21-4-9-7-8-11-4z" fill="#8F511D"></path> </svg> </div> </section>   ${articles.map((article) => {
+    return article.isRightSection ? renderTemplate`${renderComponent($$result2, "RightSection", $$RightSection, { "title": article.title, "subTitle": article.subTitle, "single": article.single, "imgOne": article.imgOne, "imgOneAlt": article.imgOneAlt, "imgTwo": article.imgTwo, "imgTwoAlt": article.imgTwoAlt, "btnExists": article.btnExists, "btnTitle": article.btnTitle, "btnURL": article.btnURL })}` : renderTemplate`${renderComponent($$result2, "LeftSection", $$LeftSection, { "title": article.title, "subTitle": article.subTitle, "img": article.img, "imgAlt": article.imgAlt, "btnExists": article.btnExists, "btnTitle": article.btnTitle, "btnURL": article.btnURL })}`;
+  })} ${renderComponent($$result2, "HeroSectionAlt", $$HeroSectionAlt, { "title": "No dudes m\xE1s", "subTitle": "Unite a nuestra red de revendedores y disfruta de m\xFAltiples beneficios", "url": "./contact.astro" })} ` })}`;
+}, "C:/Users/PC/Desktop/latte-chocolate-page/latte-page/src/pages/nosotros/index.astro", void 0);
+
+const $$file = "C:/Users/PC/Desktop/latte-chocolate-page/latte-page/src/pages/nosotros/index.astro";
+const $$url = "/nosotros";
+
+export { $$Index as default, $$file as file, $$url as url };

@@ -1,4 +1,5 @@
 ---
+import { firebase } from "@/firebase/config";
 // Import necessary components
 import MainLayout from "@/layouts/MainLayout.astro";
 import MainSection from "@components/ui/blocks/MainSection.astro";
@@ -7,7 +8,12 @@ import TestimonialProducts from "@/components/sections/products/TestimonialProdu
 import HeroSectionAlt from "@/components/sections/landing/HeroSectionAlt.astro";
 
 const pageTitle: string = `Emprender | ${SITE.title}`;
-
+const userValue = firebase.auth.currentUser ;
+await userValue?.reload()
+const {user} = Astro.locals
+if(user){
+    Astro.redirect('/comercios')
+}
 ---
 
 <MainLayout
@@ -211,12 +217,18 @@ const pageTitle: string = `Emprender | ${SITE.title}`;
     ]}
   />
 
-
-  <HeroSectionAlt
+{
+  userValue ? (<HeroSectionAlt
+    title="Parece que ya nos conocemos"
+    subTitle="¡Ingresa a tu cuenta ahora!"
+    url="./comercios"
+  />) : (  <HeroSectionAlt
     title="¡Comenzá Hoy!"
     subTitle="Descubrí el portal comercio y se parte de nuestra red de revendedores"
     url="./register"
-  />
+  />)
+}
+
 
 </MainLayout>
 

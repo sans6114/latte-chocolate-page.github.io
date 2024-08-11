@@ -12,8 +12,80 @@
 			"handle": "filesystem"
 		},
 		{
+			"src": "^\\/_actions(?:\\/(.*?))?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^\\/_image$",
+			"dest": "_render"
+		},
+		{
+			"src": "^\\/404\\/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^\\/comercios\\/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^\\/contact\\/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^\\/emprender\\/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^\\/favicon\\.ico\\/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^\\/login\\/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^\\/manifest\\.json\\/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^\\/miCuenta\\/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^\\/nosotros\\/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^\\/products\\/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^\\/products(?:\\/(.*?))?\\/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^\\/register\\/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^\\/robots\\.txt\\/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^\\/tienda\\/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^\\/Verified\\/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^\\/$",
+			"dest": "_render"
+		},
+		{
 			"src": "/.*",
-			"dest": "/404.html",
+			"dest": "_render",
 			"status": 404
 		}
 	]

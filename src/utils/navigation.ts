@@ -5,7 +5,6 @@ const navBarLinks = [
   { name: "Products", url: "/products" },
   { name: "Tienda", url: "/tienda" },
   { name: "Emprender", url: "/emprender" },
-  { name: "Distribuir", url: "/contact" },
 ];
 // An array of links for footer
 const footerLinks = [
