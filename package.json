@@ -36,7 +36,7 @@
     "sharp-ico": "^0.1.5",
     "sweetalert2": "^11.12.3",
     "swiper": "^11.1.5",
-    "tailwindcss": "^3.4.4",
+    "tailwindcss": "^3.4.12",
     "typescript": "^5.5.3",
     "vue": "^3.4.34"
   },
